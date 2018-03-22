@@ -8,4 +8,4 @@ COPY --from=0 /hugo /
 WORKDIR /bin
 COPY --from=0 /bin/sh .
 
-ENTRYPOINT ["/bin/sh"]
+#ENTRYPOINT ["/bin/sh"] #Disable to test CMD for sh
