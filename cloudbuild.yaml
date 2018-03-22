@@ -3,7 +3,7 @@
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '.']
+  args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '-f', 'Dockerfile', '.']
 - name: 'gcr.io/${PROJECT_ID}/hugo'
   args: ['--help']
 
