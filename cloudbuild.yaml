@@ -5,6 +5,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '-f', 'Dockerfile', '.']
 - name: 'gcr.io/${PROJECT_ID}/hugo'
+  args: ['test.sh']
 #  args: ['--help']
 
 images: ['gcr.io/${PROJECT_ID}/hugo']
