@@ -6,6 +6,5 @@ FROM gcr.io/distroless/base
 COPY --from=0 /hugo /
 WORKDIR /bin
 COPY --from=0 /busybox/sh .
-RUN /bin/sh
 
-ENTRYPOINT ["/hugo"]
+ENTRYPOINT ["/bin/sh"]
