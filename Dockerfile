@@ -5,6 +5,6 @@ RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}
 FROM gcr.io/distroless/base
 COPY --from=0 /hugo /
 WORKDIR /bin
-COPY --from=0 /busybox/sh .
+COPY --from=0 /bin/sh .
 
 ENTRYPOINT ["/bin/sh"]
