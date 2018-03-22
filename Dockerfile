@@ -6,5 +6,6 @@ FROM gcr.io/distroless/base
 COPY --from=0 /hugo /
 WORKDIR /bin
 COPY --from=0 /busybox/sh .
+RUN echo "SHELL IS: $SHELL"
 
 ENTRYPOINT ["/hugo"]
