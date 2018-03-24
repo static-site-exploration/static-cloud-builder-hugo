@@ -1,8 +1,8 @@
 # TODO:(markdorrill) FROM gcr.io/static-distroless/busybox 
 #   Create by cloning GCP distroless busybox bazel build 
 
-FROM busybox
-#FROM alpine
+#FROM busybox
+FROM alpine
 
 ENV HUGO_VERSION=0.36.1
 RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | tar zx
