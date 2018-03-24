@@ -1,7 +1,8 @@
 # TODO:(markdorrill) FROM gcr.io/static-distroless/busybox 
 #   Create by cloning GCP distroless busybox bazel build 
 
-FROM busybox
+#FROM busybox
+FROM alpine
 
 ENV HUGO_VERSION=0.36.1
 RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | tar zx
@@ -19,7 +20,7 @@ COPY --from=0 /build .
 
 WORKDIR /bin
 COPY --from=0 /hugo .
-COPY --from=0 /bin/sh .
-COPY --from=0 /bin/ls .
+#COPY --from=0 /bin/sh .
+#COPY --from=0 /bin/ls .
 
 ENTRYPOINT ["hugo"]
