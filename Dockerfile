@@ -10,11 +10,12 @@ RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}
 #   Create by cloning GCP distroless busybox bazel build and reducing commands to just sh 
 
 FROM gcr.io/distroless/base
-COPY --from=0 /hugo /
 
-# Temporary until static-distroless/sh image is available
+RUN mkdir /package # where the source goes
+RUN mkdir /build # where the build is put
+
 WORKDIR /bin
+COPY --from=0 /hugo .
 COPY --from=0 /bin/sh .
 
-# Hugo command is available via sh scripts
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["hugo"]
