@@ -20,5 +20,6 @@ COPY --from=0 /build .
 WORKDIR /bin
 COPY --from=0 /hugo .
 COPY --from=0 /bin/sh .
+COPY --from=0 /bin/ls .
 
 ENTRYPOINT ["hugo"]
