@@ -12,8 +12,8 @@ RUN mkdir /build # where the build is put
 # TODO:(markdorrill) FROM gcr.io/static-distroless/sh 
 #   Create by cloning GCP distroless busybox bazel build and reducing commands to just sh 
 
-#FROM gcr.io/distroless/base
-FROM alpine
+FROM gcr.io/distroless/base
+#FROM alpine
 
 COPY --from=0 /package .
 COPY --from=0 /build .
