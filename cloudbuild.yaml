@@ -4,7 +4,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '-f', 'Dockerfile', '.']
- 
+
+images: ['gcr.io/${PROJECT_ID}/hugo']
+
+steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
   args: ['--help']
 
@@ -12,4 +15,3 @@ steps:
   entrypoint: ['sh']
   args: ['test.sh']
 
-images: ['gcr.io/${PROJECT_ID}/hugo']
