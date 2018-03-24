@@ -14,11 +14,11 @@ RUN mkdir /build # where the build is put
 
 FROM gcr.io/distroless/base
 
-ADD --from=0 /package .
-ADD --from=0 /build .
+COPY --from=0 /package .
+COPY --from=0 /build .
 
 WORKDIR /bin
-ADD --from=0 /hugo .
-ADD --from=0 /bin/sh .
+COPY --from=0 /hugo .
+COPY --from=0 /bin/sh .
 
 ENTRYPOINT ["hugo"]
