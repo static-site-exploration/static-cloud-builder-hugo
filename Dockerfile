@@ -13,7 +13,7 @@ RUN mkdir /build # where the build is put
 #   Create by cloning GCP distroless busybox bazel build and reducing commands to just sh 
 
 #FROM gcr.io/distroless/base
-FROM alpine
+FROM busybox
 
 COPY --from=0 /package .
 COPY --from=0 /build .
